@@ -4,5 +4,8 @@ from django.shortcuts import render
 def display_home(request):
     return render(request, 'landingPage/index.html')
 
-def display_home(request):
-    return render(request, 'landingPage/index.html')
+def display_create(request):
+    return render(request, 'create/index.html')
+
+def display_dash(request):
+    return render(request, 'dashboard/index.html')

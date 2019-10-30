@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import TemplateView
-
+from django.urls import include
+from django.conf.urls.static import static
+from django.conf import settings
+import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', TemplateView.as_view(template_name='test/index.html')),
-    path('register/', TemplateView.as_view(template_name='create/createUser.html')),
-    path('', TemplateView.as_view(template_name='landingPage/landingPage.html'))
-]
+    path('', include('eSports.urls')),
+
+    # path('index/', TemplateView.as_view(template_name='test/index.html')),
+    # path('register/', TemplateView.as_view(template_name='create/index.html')),
+    # path('land/', TemplateView.as_view(template_name='landingPage/index.html')),
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
