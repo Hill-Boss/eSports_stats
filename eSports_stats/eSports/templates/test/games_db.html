@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Games From DB</title>
+  </head>
+  <body>
+    {% if Game%}
+    <ol>
+      {% for game in Game %}
+      <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </body>
+</html>

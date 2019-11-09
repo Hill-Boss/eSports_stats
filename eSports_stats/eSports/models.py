@@ -7,7 +7,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField(max_length=60)
-    discord = models.CharField(max_length=60)
+    discord = models.CharField(max_length=60, default=None, blank=True, null=True)
 
 class Role(models.Model):
     role_id = models.IntegerField(primary_key=True)
@@ -18,29 +18,29 @@ class Staff(models.Model):
     role_id = models.ForeignKey(Role, on_delete=models.CASCADE)
     status = models.BooleanField()
     date_start = models.DateField()
-    date_end = models.DateField()
+    date_end = models.DateField(default=None, blank=True, null=True)
 
 class Status(models.Model):
     status_id = models.IntegerField(primary_key=True)
     status = models.CharField(max_length=60)
     date_start = models.DateField()
-    date_end = models.DateField()
+    date_end = models.DateField(default=None, blank=True, null=True)
 
 class Player(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, primary_key=True)
     status_id = models.ForeignKey(Status, on_delete=models.CASCADE)
     student_id = models.IntegerField()
-    pga = models.PositiveSmallIntegerField()
+    gpa = models.PositiveSmallIntegerField()
     YEAR_IN_SCHOOL_CHOICES = [
-    ('FR', 'Freshman'),
-    ('SO', 'Sophmore'),
-    ('JR', 'Junior'),
-    ('SR', 'Senior'),
+        ('FR', 'Freshman'),
+        ('SO', 'Sophmore'),
+        ('JR', 'Junior'),
+        ('SR', 'Senior'),
     ]
     year = models.CharField(max_length=2, choices=YEAR_IN_SCHOOL_CHOICES)
     major = models.CharField(max_length=60)
     date_start = models.DateField()
-    date_end = models.DateField()
+    date_end = models.DateField(default=None, blank=True, null=True)
 
 class Game(models.Model):
     game_id = models.IntegerField(primary_key=True)
@@ -60,7 +60,7 @@ class Team(models.Model):
     status = models.CharField(max_length=60)
     team_name = models.CharField(max_length=60)
     date_start = models.DateField()
-    date_end = models.DateField()
+    date_end = models.DateField(default=None, blank=True, null=True)
 
 class user_team(models.Model):
     user_id = models.ForeignKey(Player, on_delete=models.CASCADE)
@@ -69,7 +69,7 @@ class user_team(models.Model):
         unique_together = ('user_id', 'team_id')
     team_cap = models.BooleanField()
     date_start = models.DateField()
-    date_end = models.DateField()
+    date_end = models.DateField(default=None, blank=True, null=True)
 
 class Stats(models.Model):
     stat_id = models.IntegerField(primary_key=True)
