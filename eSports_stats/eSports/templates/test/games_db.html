@@ -1,12 +1,106 @@
 <html>
-  <head>
     <title>Games From DB</title>
   </head>
   <body>
-    {% if Game%}
+    {% if Users%}
+    <h1>Users</h1>
     <ol>
-      {% for game in Game %}
-      <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
+      {% for user in Users %}
+      <li>
+        id: {{user.user_id}}
+        <br>
+        login_name: {{user.login_name}}
+        <br>
+        first name: {{user.first_name}}
+        <br>
+        last name: {{user.last_name}}
+        <br>
+        email: {{user.email}}
+        <br>
+        discord: {{user.discord}}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if Staff%}
+    <h1>Staff</h1>
+    <ol>
+      {% for staff in Staff %}
+      <li>
+        id: {{staff.user_id}}
+        <br>
+        role_id: {{staff.role_id}}
+        <br>
+        status: {{staff.status}}
+        <br>
+        Start Date: {{staff.date_start}}
+        <br>
+        End Date: {{staff.date_end}}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if Players%}
+    <h1>Players</h1>
+    <ol>
+      {% for player in Players %}
+      <li>
+        id: {{player.user_id}}
+        <br>
+        status_id: {{player.status_id}}
+        <br>
+        student_id: {{player.student_id}}
+        <br>
+        gpa: {{player.gpa}}
+        <br>
+        year: {{player.year}}
+        <br>
+        major: {{player.major}}
+        <br>
+        Start Date: {{player.date_start}}
+        <br>
+        End Date: {{player.date_end}}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if Games%}
+    <h1>Games</h1>
+    <ol>
+      {% for game in Games %}
+      <li>
+        id: {{game.game_id}}
+        <br>
+        Game: {{game.name}}
+        <br>
+        Status: {{game.status}}
+        <br>
+        Platform: {{game.platform}}
+        <br>
+        Launcher: {{game.launcher}}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if Teams%}
+    <h1>Teams</h1>
+    <ol>
+      {% for team in Teams %}
+      <li>
+          team_id: {{team.team_id}}
+          <br>
+          game_id: {{team.game_id}}
+          <br>
+          rank_id: {{team.rank_id}}
+          <br>
+          status: {{team.status}}
+          <br>
+          team_name: {{team.team_name}}
+          <br>
+          Start Date: {{team.date_start}}
+          <br>
+          End Date: {{team.date_end}}
+      </li>
       {% endfor %}
     </ol>
     {% endif %}

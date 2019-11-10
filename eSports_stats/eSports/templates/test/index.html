@@ -12,10 +12,12 @@
 
   {% load static %}
   <!-- localized stylesheets -->
-  <link rel="stylesheet" href="{% static '/landingPage/css/landing-page.css' %}"></style>
-  <link rel="stylesheet" href="{% static '/bootstrap-4.3.1-dist/css/bootstap.min.css' %}"></style>
+  <link rel="stylesheet" href="{% static '/landingPage/css/landing-page.css' %}">
+  <link rel="stylesheet" href="{% static '/bootstrap-4.3.1-dist/css/bootstrap.min.css' %}">
 
   <link rel="icon" type="image/png" sizes="16x16" href="{% static '/general/images/eSports_logo.png' %}">
+
+  <link rel="script" href="{% static '/jQuery-3.4.1/jQuery.js'">
 
   <style>
   html,body,p,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
@@ -37,7 +39,34 @@
 
       <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-container">
-            afjdslkfjsa
+          {% if Games%}
+          <ol>
+            {% for game in Games %}
+            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
+            {% endfor %}
+          </ol>
+          {% endif %}
+          {% if Games%}
+          <ol>
+            {% for game in Games %}
+            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
+            {% endfor %}
+          </ol>
+          {% endif %}
+          {% if Games%}
+          <ol>
+            {% for game in Games %}
+            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
+            {% endfor %}
+          </ol>
+          {% endif %}
+          {% if Games%}
+          <ol>
+            {% for game in Games %}
+            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
+            {% endfor %}
+          </ol>
+          {% endif %}
         </div>
       </div>
 
