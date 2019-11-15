@@ -38,35 +38,8 @@
       </header>
 
       <div class="w3-row-padding w3-margin-bottom">
-        <div class="w3-container">
-          {% if Games%}
-          <ol>
-            {% for game in Games %}
-            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
-            {% endfor %}
-          </ol>
-          {% endif %}
-          {% if Games%}
-          <ol>
-            {% for game in Games %}
-            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
-            {% endfor %}
-          </ol>
-          {% endif %}
-          {% if Games%}
-          <ol>
-            {% for game in Games %}
-            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
-            {% endfor %}
-          </ol>
-          {% endif %}
-          {% if Games%}
-          <ol>
-            {% for game in Games %}
-            <li> id: {{game.game_id}} Game: {{game.name}} Status: {{game.status}} Platform: {{game.platform}} Launcher: {{game.launcher}}</li>
-            {% endfor %}
-          </ol>
-          {% endif %}
+        <div class="w3-container" style="height:auto">
+          <object type="text/html" data="/db_data"></object>
         </div>
       </div>
 

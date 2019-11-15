@@ -40,7 +40,7 @@ def display_test(request):
         'user_game': user_game_list
         })
 
-def games_db(request):
+def db_data(request):
     user_list = User.objects.all()
     staff_list = Staff.objects.all()
     player_list = Player.objects.all()
@@ -48,7 +48,7 @@ def games_db(request):
     Team_list = Team.objects.all()
     user_team_list = user_team.objects.all()
     user_game_list = user_game.objects.all()
-    return render(request, 'test/games_db.html', {
+    return render(request, 'test/db_data.html', {
         'Users': user_list,
         'Staff': staff_list,
         'Players': player_list,
@@ -57,6 +57,11 @@ def games_db(request):
         'user_team': user_team_list,
         'user_game': user_game_list
         })
+
+def display_data(request):
+    user_game_list = user_game.objects.all()
+    return render(request, 'viewData/index.html', {'user_game': user_game_list})
+
 
 def display_login(request):
     return render(request, 'accounts/login/login.html')

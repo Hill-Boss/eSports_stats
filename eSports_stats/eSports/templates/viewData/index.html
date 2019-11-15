@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>View Data</title>
+
+    <!-- links to stylesheets -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link ref="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <!-- localized stylesheets -->
+    <link rel="stylesheet" href="{% static '/landingPage/css/landing-page.css' %}">
+
+  </head>
+  <body>
+    <!-- Top container -->
+    <div class="w3-bar w3-top teal w3-large" style="z-index:4">
+      <span class="w3-bar-item w3-left"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></span>
+      <div id="options" class="w3-container w3-center" style="display:block;">
+        {% if user_game %}
+        <select name="Game">
+          {% for game in user_game %}
+            <optgroup label={{game.game_id.name}}>
+              <option value="{{game.game_id.name}},{{game.username}}">{{game.username}}</option>
+            </optgroup>
+          {% endfor %}
+        </select>
+        {% endif %}
+        <input type="submit" onclick="getURL()">
+      </div>
+    </div>
+    <object id="outsidePage" style="display:none; width:100vw; height:100vh;" type="text/html"></object>
+  </body>
+  <script type="text/javascript">
+    function getURL() {
+      var outsidePage = document.getElementById('outsidePage');
+      var data_game = document.getElementsByName('Game')[0].value;
+      data_game = data_game.split(",")
+      var url = ''
+      if (data_game[0] == 'Apex Legends') {
+        url = apex_url(data_game[1])
+      } else if (data_game[0] == 'Rocket League') {
+        url = rl_url(data_game[1])
+      } else if (data_game[0] == 'Overwatch') {
+        url = ow_url(data_game[1])
+      } else if (data_game[0] == 'League of Legends') {
+        url = ow_url(data_game[1])
+      }
+      outsidePage.data = url;
+      outsidePage.style.display = "block";
+    }
+    function apex_url(data) {
+      var url = "https://tracker.gg/apex/profile/origin/" + data + "/overview";
+      return url;
+    }
+    function rl_url(data) {
+      var url = "https://rocketleague.tracker.network/profile/steam/" + data;
+      return url;
+    }
+    function ow_url(data) {
+      var url = "https://overwatchtracker.com/profile/pc/global" + data;
+      return url;
+
+    }
+    function lol_url(data) {
+      var url = "https://lol.mobanalytics.gg/summoner/na/" + data + "/?season=13";
+      return url;
+
+    }
+  </script>
+</html>

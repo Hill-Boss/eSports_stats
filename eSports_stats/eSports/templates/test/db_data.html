@@ -41,6 +41,27 @@
     </ol>
     {% endif %}
     {% if Players%}
+    <!-- <div id="Players_list">
+      {% for player in Players %}
+        <option value="volvo">Volvo</option>
+        id: {{player.user_id}}
+        <br>
+        status_id: {{player.status_id}}
+        <br>
+        student_id: {{player.student_id}}
+        <br>
+        gpa: {{player.gpa}}
+        <br>
+        year: {{player.year}}
+        <br>
+        major: {{player.major}}
+        <br>
+        Start Date: {{player.date_start}}
+        <br>
+        End Date: {{player.date_end}}
+      </li>
+      {% endfor %}
+    </div> -->
     <h1>Players</h1>
     <ol>
       {% for player in Players %}
