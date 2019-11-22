@@ -41,27 +41,6 @@
     </ol>
     {% endif %}
     {% if Players%}
-    <!-- <div id="Players_list">
-      {% for player in Players %}
-        <option value="volvo">Volvo</option>
-        id: {{player.user_id}}
-        <br>
-        status_id: {{player.status_id}}
-        <br>
-        student_id: {{player.student_id}}
-        <br>
-        gpa: {{player.gpa}}
-        <br>
-        year: {{player.year}}
-        <br>
-        major: {{player.major}}
-        <br>
-        Start Date: {{player.date_start}}
-        <br>
-        End Date: {{player.date_end}}
-      </li>
-      {% endfor %}
-    </div> -->
     <h1>Players</h1>
     <ol>
       {% for player in Players %}
@@ -108,19 +87,19 @@
     <ol>
       {% for team in Teams %}
       <li>
-          team_id: {{team.team_id}}
-          <br>
-          game_id: {{team.game_id.name}}
-          <br>
-          rank_id: {{team.rank_id.name}}
-          <br>
-          status: {{team.status}}
-          <br>
-          team_name: {{team.team_name}}
-          <br>
-          Start Date: {{team.date_start}}
-          <br>
-          End Date: {{team.date_end}}
+        team_id: {{team.team_id}}
+        <br>
+        game_id: {{team.game_id.name}}
+        <br>
+        rank_id: {{team.rank_id.name}}
+        <br>
+        status: {{team.status}}
+        <br>
+        team_name: {{team.team_name}}
+        <br>
+        Start Date: {{team.date_start}}
+        <br>
+        End Date: {{team.date_end}}
       </li>
       {% endfor %}
     </ol>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import logout
+from django.views.decorators.csrf import csrf_exempt
 from .models import User
 from .models import Role
 from .models import Staff
@@ -62,9 +63,13 @@ def display_data(request):
     user_game_list = user_game.objects.all()
     return render(request, 'viewData/index.html', {'user_game': user_game_list})
 
-
 def display_login(request):
     return render(request, 'accounts/login/login.html')
 
 def logout_view(request):
     return render(request)
+
+@csrf_exempt
+def post_data(request):
+    if request.method == 'POST':
+        pass

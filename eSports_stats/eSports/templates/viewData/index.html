@@ -50,6 +50,7 @@
       outsidePage.data = url;
       outsidePage.style.display = "block";
     }
+    // TODO: This is probably illegal if it were public... but this is only until we have api calls/scrapping
     function apex_url(data) {
       var url = "https://tracker.gg/apex/profile/origin/" + data + "/overview";
       return url;
