@@ -1,17 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_exempt
-from .models import User
-from .models import Role
-from .models import Staff
-from .models import Status
-from .models import Player
-from .models import Game
-from .models import Team_Rank
-from .models import Team
-from .models import user_team
-from .models import Stats
-from .models import user_game
+from .models import User, Role, Staff, Status, Player, Game, Team_Rank, Team, user_team, Stats, user_game
 
 # Create your views here.
 def display_home(request):
