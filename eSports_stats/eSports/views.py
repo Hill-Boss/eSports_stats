@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse, HttpResponse
 from django.contrib.auth import logout
 from django.views.decorators.csrf import csrf_exempt
 from .models import User, Role, Staff, Status, Player, Game, Team_Rank, Team, user_team, Stats, user_game
@@ -63,3 +64,24 @@ def logout_view(request):
 def post_data(request):
     if request.method == 'POST':
         pass
+
+def ajax_getStats(request):
+    if request.method == 'GET':
+        pass
+
+def ajax_getGamePlayer(request):
+    if request.method == 'GET':
+        return JsonResponse(User_Game(), safe=False)
+
+def User_Game():
+    user_game_list = user_game.objects.all()
+    games_list = Game.objects.all()
+    response = {}
+    for game in games_list:
+        obj = []
+        for player in user_game_list:
+            if player.game_id.name == game.name:
+                obj.append(player.username)
+
+        response[game.name] = obj
+    return response

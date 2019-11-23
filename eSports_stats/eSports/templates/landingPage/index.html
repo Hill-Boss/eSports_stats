@@ -23,33 +23,15 @@
   <body class="w3-light-grey">
     <!-- Top container -->
     <div class="w3-bar w3-top teal w3-large" style="z-index:4">
-      <span class="w3-bar-item w3-left"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></span>
+      <span class="w3-bar-item w3-left">
+        <a href="/"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
+      </span>
       <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-amber w3-text-white w3-right" style="margin-top:22px" onclick="sidebar_open();"><i class="fa fa-bars"></i>  Sign in or Sign up</button>
     </div>
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:600px;right:0;" id="Sidebar"><br>
+    <nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:50vw;right:0;" id="Sidebar"><br>
       <div class="w3-container">
-        <form action="/action_page.php">
-          <h5>Sign </h5>
-          <hr>
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
-
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>
-
-          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-          <div class="clearfix">
-            <button type="submit" class="signupbtn">Sign In</button>
-          </div>
-        </form>
-      </div>
-      <div class="w3-container" id=signupform style="display: none;">
         <form action="/action_page.php">
           <h5>Sign up</h5>
           <p>Please fill in this form to create an account.</p>
@@ -77,43 +59,42 @@
     <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="sidebar_close()" style="cursor:pointer" title="close side menu" id="Overlay"></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-right:600px;margin-top:73px;" id="Content">
-
-      <!-- Header -->
-      <header class="w3-container" style="padding-top:22px">
-        <h5><b><i class="fa fa-plus-square-o"></i> Create New User</b></h5>
-      </header>
-
+    <div class="w3-main" style="margin-right:50vw; margin-top:73px;" id="Content">
+      <hr>
       <div class="w3-row-padding w3-margin-bottom">
         <div class="w3-quarter">
-          <div class="w3-container w3-orange w3-text-white w3-padding-16">
-            <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-            <div class="w3-right">
-              <h3>50</h3>
+          <a href="/viewData">
+            <div class="w3-container w3-orange w3-text-white w3-padding-16">
+              <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+              <div class="w3-right">
+                <!-- <h3>50</h3> -->
+              </div>
+              <div class="w3-clear"></div>
+              <h4>Users Stats</h4>
             </div>
-            <div class="w3-clear"></div>
-            <h4>Users</h4>
-          </div>
+          </a>
         </div>
         <div class="w3-quarter">
           <div class="w3-container w3-red w3-padding-16">
             <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
             <div class="w3-right">
-              <h3>52</h3>
+              <!-- <h3>52</h3> -->
             </div>
             <div class="w3-clear"></div>
             <h4>something</h4>
           </div>
         </div>
         <div class="w3-quarter">
-          <div class="w3-container w3-blue w3-padding-16">
-            <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-            <div class="w3-right">
-              <h3>99</h3>
+          <a href="/admin/">
+            <div class="w3-container w3-blue w3-padding-16">
+              <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+              <div class="w3-right">
+                <!-- <h3>99</h3> -->
+              </div>
+              <div class="w3-clear"></div>
+              <h4>Admin</h4>
             </div>
-            <div class="w3-clear"></div>
-            <h4>something</h4>
-          </div>
+          </a>
         </div>
         <div class="w3-quarter">
           <div class="w3-container w3-teal w3-padding-16">
@@ -131,51 +112,60 @@
         <div class="w3-row-padding" style="margin:0 -16px">
           <div class="w3-third">
             <h5>About Us</h5>
-              <p>The University eSports program was started in the Fall of 2019. The program was spearheaded by Michael Cassens, a Media Arts Professor</p>
+              <p>Some about us info</p>
           </div>
-          <div class="w3-twothird">
-            <h5>Feeds</h5>
+          <div class="w3-twothird w3-white w3-border w3-border-grey">
+            <div class="w3-container">
+              <h5>Sign In</h5>
+              <hr>
+              <label for="email"><b>Email</b></label>
+              <input id="login_email" type="text" placeholder="Enter Email" required>
 
+              <label for="psw"><b>Password</b></label>
+              <input id="login_pswd" type="password" placeholder="Enter Password" required>
+              <div class="clearfix">
+                <button type="submit" onclick="login()">Sign In</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <hr>
-      <div class="w3-container w3-bottom w3-dark-grey w3-padding-32">
-        <div class="w3-row">
-          <div class="w3-container w3-half">
-            <div class="w3-container w3-half">
+      <footer class="w3-bottom w3-dark-grey w3-padding-32" style="max-height:25vh">
+        <div class="w3-container">
+          <div class="w3-row">
+            <div class="w3-container w3-quarter" style="max-width:25vw">
               <h5 class="w3-bottombar w3-border-orange">Accessibility</h5>
-              <p>Language</p>
-              <p>Country</p>
-              <p>City</p>
+              <h6>Language</h6>
+              <h6>Country</h6>
+              <h6>City</h6>
             </div>
-            <div class="w3-container w3-half">
+            <div class="w3-container w3-quarter" style="max-width:25vw">
               <h5 class="w3-bottombar w3-border-red">System</h5>
-              <p>Browser</p>
-              <p>OS</p>
-              <p>More</p>
+              <h6>Browser</h6>
+              <h6>OS</h6>
+              <h6>More</h6>
             </div>
-          </div>
-          <div class="w3-container w3-half">
-            <div class="w3-container w3-half">
+            <div class="w3-container w3-quarter" style="max-width:25vw">
               <h5 class="w3-bottombar w3-border-blue">Target</h5>
-              <p>Users</p>
-              <p>Active</p>
-              <p>Geo</p>
-              <p>Interests</p>
+              <h6>Users</h6>
+              <h6>Active</h6>
+              <h6>Geo</h6>
+              <h6>Interests</h6>
             </div>
-            <div class="w3-container w3-half">
+            <div class="w3-container w3-quarter" style="max-width:25vw">
               <h5 class="w3-bottombar w3-border-green">Contact Us</h5>
-              <p>address</p>
-              <p>email</p>
-              <p>number</p>
-              <p>media links</p>
+              <h6>address</h6>
+              <h6>email</h6>
+              <h6>number</h6>
+              <h6>media links</h6>
             </div>
           </div>
         </div>
-      </div>
+      </footer>
       <!-- End page content -->
     </div>
     <script src="{% static '/general/js/eSports.js' %}"></script>
+    <script src="{% static '/landingPage/js/landing.js' %}"></script>
   </body>
   </html>
