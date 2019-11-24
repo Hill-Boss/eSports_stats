@@ -2,7 +2,7 @@ from django.db import models
 
 # TODO: Change Char Lengths
 class User(models.Model):
-    user_id = models.IntegerField(primary_key=True)
+    user_id = models.AutoField(unique=True, primary_key=True)
     login_name = models.CharField(max_length=60)
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
@@ -52,6 +52,8 @@ class Player(models.Model):
         ('SO', 'Sophmore'),
         ('JR', 'Junior'),
         ('SR', 'Senior'),
+        ('UN', 'Unknown'),
+        ('NA', 'Not Applicable'),
     ]
     year = models.CharField(max_length=2, choices=YEAR_IN_SCHOOL_CHOICES)
     major = models.CharField(max_length=60)
@@ -108,7 +110,7 @@ class user_team(models.Model):
 
 
 class Stats(models.Model):
-    stat_id = models.IntegerField(primary_key=True)
+    stat_id = models.AutoField(primary_key=True)
     stats = models.TextField() # TODO: JSON OR SOMETHING
     date_updated = models.DateTimeField(auto_now=True)
 
@@ -122,7 +124,7 @@ class user_game(models.Model):
     game_id = models.ForeignKey(Game, on_delete=models.CASCADE)
     class Meta:
         unique_together = ('user_id', 'game_id')
-    stat_id = models.ForeignKey(Stats, on_delete=models.CASCADE)
+    stat_id = models.ForeignKey(Stats, on_delete=models.CASCADE, default=None, blank=True, null=True)
     username = models.CharField(max_length=60)
 
     def __str__(self):

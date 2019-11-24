@@ -26,31 +26,29 @@
       <span class="w3-bar-item w3-left">
         <a href="/"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
       </span>
-      <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-amber w3-text-white w3-right" style="margin-top:22px" onclick="sidebar_open();"><i class="fa fa-bars"></i>  Sign in or Sign up</button>
+      <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-amber w3-text-white w3-right" style="margin-top:22px" onclick="sidebar_open();"><i class="fa fa-bars"></i>  Sign in or Sign up</button>
     </div>
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:50vw;right:0;" id="Sidebar"><br>
+    <nav class="w3-sidebar w3-white" style="display:none;z-index:3;width:50vw;right:0;" id="Sidebar"><br>
       <div class="w3-container">
-        <form action="/action_page.php">
-          <h5>Sign up</h5>
-          <p>Please fill in this form to create an account.</p>
-          <hr>
+        <h5>Sign up</h5>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
+        <label for="email"><b>Email</b></label>
+        <input  type="text" placeholder="Enter Email" name="email" required>
 
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
 
-          <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-          <div class="clearfix">
-            <button type="submit" class="signupbtn">Sign Up</button>
-          </div>
-          <hr>
-        </form>
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+        <hr>
       </div>
     </nav>
 

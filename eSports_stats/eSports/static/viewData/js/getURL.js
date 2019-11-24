@@ -1,7 +1,6 @@
 function getURL() {
   var outsidePage = document.getElementById('outsidePage');
   var data_game = document.getElementsByName('Game')[0].value;
-  console.log('HERE' + data_game);
   data_game = data_game.split(",");
   var url = '';
   if (data_game[0] == 'Apex Legends') {
@@ -11,11 +10,10 @@ function getURL() {
   } else if (data_game[0] == 'Overwatch') {
     url = ow_url(data_game[1]);
   } else if (data_game[0] == 'League of Legends') {
-    url = ow_url(data_game[1]);
+    url = lol_url(data_game[1]);
   }
   outsidePage.data = url;
   outsidePage.style.display = "block";
-
 }
 // TODO: This is probably illegal if it were public... but this is only until we have api calls/scrapping
 function apex_url(data) {
@@ -27,10 +25,12 @@ function rl_url(data) {
   return url;
 }
 function ow_url(data) {
-  var url = "https://overwatchtracker.com/profile/pc/global" + data;
+  data = data.split('#');
+  data = data[0] + '-' + data[1];
+  var url = "https://overwatchtracker.com/profile/pc/global/" + data;
   return url;
 }
 function lol_url(data) {
-  var url = "https://lol.mobanalytics.gg/summoner/na/" + data + "/?season=13";
+  var url = "https://lol.mobalytics.gg/summoner/na/" + data + "/?season=13";
   return url;
 }

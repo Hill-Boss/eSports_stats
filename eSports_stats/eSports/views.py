@@ -51,8 +51,7 @@ def db_data(request):
         })
 
 def display_data(request):
-    user_game_list = user_game.objects.all()
-    return render(request, 'viewData/index.html', {'user_game': user_game_list})
+    return render(request, 'viewData/index.html')
 
 def display_login(request):
     return render(request, 'accounts/login/login.html')
@@ -72,6 +71,13 @@ def ajax_getStats(request):
 def ajax_getGamePlayer(request):
     if request.method == 'GET':
         return JsonResponse(User_Game(), safe=False)
+
+def ajax_CreateUser(request):
+    if request.method == 'POST':
+        U = User(login_name=request.data.username, first_name=request.data.first_name, last_name=request.data.last_name, email=request.data.email, discord=request.data.discord)
+        U.save()
+        # return HttpResponse(U, safe=False)
+
 
 def User_Game():
     user_game_list = user_game.objects.all()
