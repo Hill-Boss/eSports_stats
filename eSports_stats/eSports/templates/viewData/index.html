@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link ref="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css">
     {% load static %}
     <!-- localized stylesheets -->
     <link rel="stylesheet" href="{% static '/landingPage/css/landing-page.css' %}">
@@ -15,16 +16,27 @@
   </head>
   <body>
     <!-- Top container -->
-    <div class="w3-bar w3-top teal w3-large" style="z-index:4">
-      <span class="w3-bar-item w3-left"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></span>
-      <div id="options" class="w3-container w3-center" style="display:block;">
+    <div class="w3-bar w3-top teal w3-large" style="height:15vh;">
+      <span class="w3-bar-item w3-left">
+        <a href="/"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
+      </span>
+      <div class="w3-container w3-center" style="display:block;">
+        <select id="options" class="js-basic-single" name="Game" style="width:30vw;">
+          <option value="NULL">Select a Player</option>
+        </select>
+        <input type="submit" onclick="getURL()">
         <!-- things added by ajax call -->
       </div>
     </div>
-    <object id="outsidePage" style="display:none; width:100vw; height:100vh;" type="text/html"></object>
+    <object id="outsidePage" class="w3-bottom" style="display:none; width:100vw; height:85vh;" type="text/html"></object>
   </body>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
   <script src="{% static '/viewData/js/getURL.js' %}">  </script>
   <script src="{% static '/viewData/js/getPlayers.js' %}">  </script>
-
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".js-basic-single").select2();
+    });
+  </script>
 </html>

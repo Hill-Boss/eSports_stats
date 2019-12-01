@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^dashboard/$', views.display_dash, name='landingPage'),
     url(r'^viewData/$', views.display_data, name='viewData'),
     # url(r'^home/$', views.display_test_home, name='home'),
+    url(r'^admin/manageUsers/$', views.display_create, name='ManageUsers'),
 
     url(r'^ajax/getStats/$', views.ajax_getStats, name='ajax_getStats'),
     url(r'^ajax/getGamePlayer/$', views.ajax_getGamePlayer, name='ajax_getGamePlayer'),

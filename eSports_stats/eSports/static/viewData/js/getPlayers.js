@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $.ajax(
     {
       type: 'GET',
@@ -7,7 +8,7 @@ $(document).ready(function(){
       success: function(response)
       {
         Options = document.getElementById('options')
-        select = '<select name="Game">';
+        select = Options.innerHTML;
         for (var key in response) {
           optgroup = '<optgroup label=\"' + key + '\">';
           for (var i = 0; i < response[key].length; i++) {
@@ -20,7 +21,6 @@ $(document).ready(function(){
           console.log(optgroup);
           select += optgroup;
         }
-        select += '<input type="submit" onclick="getURL()"></select>';
         Options.innerHTML = select;
 
       },

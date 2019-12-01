@@ -11,6 +11,8 @@ function getURL() {
     url = ow_url(data_game[1]);
   } else if (data_game[0] == 'League of Legends') {
     url = lol_url(data_game[1]);
+  } else {
+    url = '';
   }
   outsidePage.data = url;
   outsidePage.style.display = "block";

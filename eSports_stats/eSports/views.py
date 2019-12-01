@@ -9,7 +9,7 @@ def display_home(request):
     return render(request, 'landingPage/index.html')
 
 def display_create(request):
-    return render(request, 'create/index.html')
+    return render(request, 'admin/manageUsers/index.html')
 
 def display_dash(request):
     return render(request, 'dashboard/index.html')
@@ -74,8 +74,13 @@ def ajax_getGamePlayer(request):
 
 def ajax_CreateUser(request):
     if request.method == 'POST':
-        U = User(login_name=request.data.username, first_name=request.data.first_name, last_name=request.data.last_name, email=request.data.email, discord=request.data.discord)
-        U.save()
+        newUser = User(login_name=request.POST[username],
+                first_name=request.POST[first_name],
+                last_name=request.POST[last_name],
+                email=request.POST[email],
+                discord=request.POST[discord])
+        newUser.save()
+
         # return HttpResponse(U, safe=False)
 
 
