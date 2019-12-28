@@ -64,18 +64,22 @@ def post_data(request):
     if request.method == 'POST':
         pass
 
+@csrf_exempt
 def ajax_getStats(request):
     if request.method == 'GET':
         pass
 
+@csrf_exempt
 def ajax_getGamePlayer(request):
     if request.method == 'GET':
         return JsonResponse(User_Game(), safe=False)
 
+@csrf_exempt
 def ajax_CreateUser(request):
     if request.method == 'POST':
         U = User(login_name=request.data.username, first_name=request.data.first_name, last_name=request.data.last_name, email=request.data.email, discord=request.data.discord)
         U.save()
+        print(U.id)
         # return HttpResponse(U, safe=False)
 
 
