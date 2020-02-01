@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css">
     {% load static %}
     <!-- localized stylesheets -->
-    <link rel="stylesheet" href="{% static '/landingPage/css/landing-page.css' %}">
+    <link rel="stylesheet" href="{% static '/css/landing-page.css' %}">
 
   </head>
   <body>
     <!-- Top container -->
     <div class="w3-bar w3-top teal w3-large" style="height:15vh;">
       <span class="w3-bar-item w3-left">
-        <a href="/"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
+        <a href="/"><img src="{% static '/imgs/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
       </span>
       <div class="w3-container w3-center" style="display:block;">
         <select id="options" class="js-basic-single" name="Game" style="width:30vw;">
@@ -32,8 +32,8 @@
   </body>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
-  <script src="{% static '/viewData/js/getURL.js' %}">  </script>
-  <script src="{% static '/viewData/js/getPlayers.js' %}">  </script>
+  <script src="{% static '/js/getURL.js' %}">  </script>
+  <script src="{% static '/js/getPlayers.js' %}">  </script>
   <script type="text/javascript">
     $(document).ready(function(){
       $(".js-basic-single").select2();
