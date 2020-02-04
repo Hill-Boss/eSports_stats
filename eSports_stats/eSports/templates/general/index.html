@@ -6,15 +6,15 @@
     <meta name="viewport-height" content="height=device-height, initial-scale=1">
 
     <!-- links to stylesheets -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link ref="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {% load static %}
     <!-- localized stylesheets -->
-    <link rel="stylesheet" href="{% static '/landingPage/css/landing-page.css' %}"></style>
-    <link rel="stylesheet" href="{% static '/w3Schools_V4.13/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/landing-page.css' %}"></style>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/general/images/eSports_logo.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/imgs/eSports_logo.png' %}">
 
     <style>
     html,body,p,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
@@ -25,7 +25,7 @@
     <!-- Top container -->
     <div class="w3-bar w3-top teal w3-large" style="z-index:4">
       <span class="w3-bar-item w3-left">
-        <a href="/"><img src="{% static '/general/images/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
+        <a href="/"><img src="{% static '/imgs/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
       </span>
       <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-amber w3-text-white w3-right" style="margin-top:22px" onclick="sidebar_open();"><i class="fa fa-bars"></i>  Sign in or Sign up</button>
     </div>
@@ -164,7 +164,7 @@
       </footer>
       <!-- End page content -->
     </div>
-    <script src="{% static '/general/js/eSports.js' %}"></script>
-    <script src="{% static '/landingPage/js/landing.js' %}"></script>
+    <script src="{% static '/js/eSports.js' %}"></script>
+    <script src="{% static '/js/landing.js' %}"></script>
   </body>
 </html>

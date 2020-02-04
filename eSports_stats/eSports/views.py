@@ -6,10 +6,10 @@ from .models import User, Role, Staff, Status, Player, Game, Team_Rank, Team, us
 
 # Create your views here.
 def display_home(request):
-    return render(request, 'landingPage/index.html')
+    return render(request, 'general/index.html')
 
 def display_create(request):
-    return render(request, 'admin/manageUsers/index.html')
+    return render(request, 'admin/manageUsers.html')
 
 def display_dash(request):
     return render(request, 'dashboard/index.html')
@@ -51,10 +51,10 @@ def db_data(request):
         })
 
 def display_data(request):
-    return render(request, 'viewData/index.html')
+    return render(request, 'accounts/User/viewData.html')
 
 def display_login(request):
-    return render(request, 'accounts/login/login.html')
+    return render(request, '/general/login/login.html')
 
 def logout_view(request):
     return render(request)
