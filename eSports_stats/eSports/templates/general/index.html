@@ -6,13 +6,13 @@
     <meta name="viewport-height" content="height=device-height, initial-scale=1">
 
     <!-- links to stylesheets -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link ref="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     {% load static %}
     <!-- localized stylesheets -->
-    <link rel="stylesheet" href="{% static '/css/landing-page.css' %}"></style>
+    <link rel="stylesheet" href="{% static '/css/master.css' %}"></style>
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
 
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/imgs/eSports_logo.png' %}">
 
@@ -21,150 +21,15 @@
     </style>
   </head>
   <!-- modified from Dashboard template from https://www.w3schools.com/w3css/w3css_templates.asp -->
-  <body class="w3-light-grey">
+  <body>
     <!-- Top container -->
-    <div class="w3-bar w3-top teal w3-large" style="z-index:4">
-      <span class="w3-bar-item w3-left">
-        <a href="/"><img src="{% static '/imgs/eSports_logo.png' %}" width="70px" height="70px" alt="Logo"></a>
-      </span>
-      <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-amber w3-text-white w3-right" style="margin-top:22px" onclick="sidebar_open();"><i class="fa fa-bars"></i>  Sign in or Sign up</button>
+    <div class="nav-bar w3-dark-red">
+      <div class="Logo w3-left">
+        <img src="{% static '/imgs/eSports_logo.png' %}" alt="Esports">
+      </div>
     </div>
-
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-white" style="display:none;z-index:3;width:50vw;right:0;" id="Sidebar"><br>
-      <div class="w3-container">
-        <h5>Sign up</h5>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
-
-        <label for="email"><b>Email</b></label>
-        <input  type="text" placeholder="Enter Email" name="email" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-        <div class="clearfix">
-          <button type="submit" class="signupbtn">Sign Up</button>
-        </div>
-        <hr>
-      </div>
-    </nav>
-
-
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="sidebar_close()" style="cursor:pointer" title="close side menu" id="Overlay"></div>
-
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-top:73px;" id="Content">
-      <hr>
-      <div class="w3-row-padding w3-margin-bottom">
-        <div class="w3-quarter">
-          <a href="/viewData">
-            <div class="w3-container w3-orange w3-text-white w3-padding-16">
-              <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <!-- <h3>50</h3> -->
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Users Stats</h4>
-            </div>
-          </a>
-        </div>
-        <div class="w3-quarter">
-          <div class="w3-container w3-red w3-padding-16">
-            <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-            <div class="w3-right">
-              <!-- <h3>52</h3> -->
-            </div>
-            <div class="w3-clear"></div>
-            <h4>something</h4>
-          </div>
-        </div>
-        <div class="w3-quarter">
-          <a href="/admin/">
-            <div class="w3-container w3-blue w3-padding-16">
-              <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <!-- <h3>99</h3> -->
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Admin</h4>
-            </div>
-          </a>
-        </div>
-        <div class="w3-quarter">
-          <div class="w3-container w3-teal w3-padding-16">
-            <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-            <div class="w3-right">
-              <h3>23</h3>
-            </div>
-            <div class="w3-clear"></div>
-            <h4>something</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="w3-panel">
-        <div class="w3-row-padding" style="margin:0 -16px">
-          <div class="w3-third">
-            <h5>About Us</h5>
-              <p>Some about us info</p>
-          </div>
-          <div class="w3-twothird w3-white w3-border w3-border-grey">
-            <div class="w3-container">
-              <h5>Sign In</h5>
-              <hr>
-              <label for="email"><b>Email</b></label>
-              <input id="login_email" type="text" placeholder="Enter Email" required>
-
-              <label for="psw"><b>Password</b></label>
-              <input id="login_pswd" type="password" placeholder="Enter Password" required>
-              <div class="clearfix">
-                <button type="submit" onclick="login()">Sign In</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <footer class="w3-bottom w3-dark-grey w3-padding-32" style="max-height:25vh">
-        <div class="w3-container">
-          <div class="w3-row">
-            <div class="w3-container w3-quarter" style="max-width:25vw">
-              <h5 class="w3-bottombar w3-border-orange">Accessibility</h5>
-              <h6>Language</h6>
-              <h6>Country</h6>
-              <h6>City</h6>
-            </div>
-            <div class="w3-container w3-quarter" style="max-width:25vw">
-              <h5 class="w3-bottombar w3-border-red">System</h5>
-              <h6>Browser</h6>
-              <h6>OS</h6>
-              <h6>More</h6>
-            </div>
-            <div class="w3-container w3-quarter" style="max-width:25vw">
-              <h5 class="w3-bottombar w3-border-blue">Target</h5>
-              <h6>Users</h6>
-              <h6>Active</h6>
-              <h6>Geo</h6>
-              <h6>Interests</h6>
-            </div>
-            <div class="w3-container w3-quarter" style="max-width:25vw">
-              <h5 class="w3-bottombar w3-border-green">Contact Us</h5>
-              <h6>address</h6>
-              <h6>email</h6>
-              <h6>number</h6>
-              <h6>media links</h6>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- End page content -->
-    </div>
-    <script src="{% static '/js/eSports.js' %}"></script>
-    <script src="{% static '/js/landing.js' %}"></script>
   </body>
+  <script src="{% static '/js/eSports.js' %}"></script>
+  <script src="{% static '/js/landing.js' %}"></script>
+
 </html>
