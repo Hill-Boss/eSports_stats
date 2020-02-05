@@ -13,21 +13,61 @@
     <!-- localized stylesheets -->
     <link rel="stylesheet" href="{% static '/css/master.css' %}"></style>
     <link rel="stylesheet" href="{% static '/css/w3.css' %}">
-
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/imgs/eSports_logo.png' %}">
 
     <style>
     html,body,p,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </style>
   </head>
-  <!-- modified from Dashboard template from https://www.w3schools.com/w3css/w3css_templates.asp -->
   <body>
-    <!-- Top container -->
-    <div class="nav-bar w3-dark-red">
-      <div class="Logo w3-left">
-        <img src="{% static '/imgs/eSports_logo.png' %}" alt="Esports">
+    <div class="h-100per nav-bar maroon w3-container">
+      <div class="logo w3-left w3-third">
+        a
+      </div>
+      <div class="title w3-center w3-third">
+        <h1>University of Montana Esports</h1>
+
+      </div>
+      <div class="w3-jumbo fa fa-bars w3-third burger">
+
       </div>
     </div>
+
+    <!-- Start of the Main Body Content -->
+    <div class="main-body">
+      <div class="sidebar w3-left w3-dark-gray">
+          <ul class="w3-btn teal w-100per" onclick="dropPlayers('Apex')">
+            Apex Legends
+            <li class="w3-btn w3-card maroon w-100per">John Doe</li>
+            <li class="w3-btn w3-card maroon w-100per">John Doe</li>
+
+
+          </ul>
+          <ul class="w3-btn teal w-100per" onclick="dropPlayers('LeagueOfLegends')">
+            League of Legends
+
+          </ul>
+          <ul class="w3-btn teal w-100per" onclick="dropPlayers('RocketLeague')">
+             Rocket League
+
+            <li class=" w3-btn w3-card maroon w-100per">KogtreyFu</li>
+
+          </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Start of  -->
+    <div class="w3-bottom footer my-kind-of-gray">
+      <div class="w3-center links">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact Us</a>
+
+      </div>
+    </div>
+
   </body>
   <script src="{% static '/js/eSports.js' %}"></script>
   <script src="{% static '/js/landing.js' %}"></script>
