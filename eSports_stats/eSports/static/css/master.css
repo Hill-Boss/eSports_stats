@@ -35,6 +35,17 @@ a:hover, a:active {
   background-color: #5e001d;
 }
 
+.w3-btn{
+  padding: 0;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  padding-bottom: 0!important;
+  display: block!important;
+}
+ul.w3-btn{
+  padding-top: 5px!important;
+}
+/* Colors */
 .maroon{
   color: #ffffff!important;
   background-color: #5e001d!important;
@@ -48,50 +59,109 @@ a:hover, a:active {
   color: #ffffff;
   background-color: #3c3c3c;
 }
-.logo{
-  background-color: inherit;
-  height: inherit;
-}
-.title{
-  color: white;
-  display: block-inline;
-  height: inherit;
-}
-.burger{
-  padding: 2%!important;
-  text-align: right;
-  height: inherit;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-.fa-bars:before{
-  cursor: pointer;
-}
-.sidebar{
-  overflow-y: scroll;
-  position: fixed;
-  margin: 0;
-  padding: 0;
-  width: 20vw;
-  height: 100vh;
-}
+/* Custom Adjustment Classes */
 .w-100per{
   width: 100%;
 }
 .h-100per{
   height: 100%;
 }
-.w3-btn{
+
+/* Top of page >>> Bottom of Page */
+.header{
+  text-align: center;
+}
+.navbar{
+  overflow: hidden;
+}
+
+.logo{
+  width: 50%;
+  float: left;
+}
+.title{
+  color: white;
+  display: block-inline;
+  height: inherit;
+}
+.Menu{
+  float: left;
+  padding: 10px;;
+  width: 50%;
+}
+.dropdown{
+  overflow: hidden;
+  float: right;
+  padding:  15px 14px;
+}
+.dropbtn.w3-btn{
+  padding: 0!important;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.card{
+  height: 500px;
+  width: 300px;
+  background-image: url('../imgs/eSports_logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card a{
+  float: left;
+  width: 100%;
+  text-align: left;
+
+}
+.card a:hover,.card a:active{
+  color: #ffffff;
+  background-color: #3c3c3c;
+}
+
+.show{
+  display: block;
+}
+
+.main-body{
+  overflow: hidden;
+}
+.row{
+  display: table;
+  width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sidebar{
+  float: left;
+  overflow-y: scroll;
+  overflow: hidden;
+  margin: 0;
   padding: 0;
-  padding-left: 0!important;
-  padding-right: 0!important;
-  padding-bottom: 0!important;
-  display: block!important;
+  width: 20%;
+  height: 100vh;
 }
-ul.w3-btn{
-  padding-top: 5px!important;
+.content{
+  float: left;
+  width: 60%;
+  height: 100vh;
+  text-align: center;
 }
+
+.right.sidebar{
+  text-align: center;
+}
+
 .footer{
-  height: 10%;
+  height: 100px;
 }

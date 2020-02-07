@@ -20,22 +20,35 @@
     </style>
   </head>
   <body>
-    <div class="h-100per nav-bar maroon w3-container">
-      <div class="logo w3-left w3-third">
-        a
+    <div class="header w3-container w3-center my-kind-of-gray">
+      <h1>University of Montana Esports</h1>
+    </div>
+    <div class="navbar teal">
+      <div class="logo">
+        <img src="{% static '/imgs/eSports_logo.png'%}" alt="Griz Esports Logo">
       </div>
-      <div class="title w3-center w3-third">
-        <h1>University of Montana Esports</h1>
-
-      </div>
-      <div class="w3-jumbo fa fa-bars w3-third burger">
+      <div class="Menu">
+        <div class="dropdown">
+          <button class="dropbtn w3-btn w3-large" onclick="showDrop()">
+            Menu
+            <i class="fa fa-bars"></i>
+          </button>
+          <div  id="myDropdown" class="dropdown-content my-kind-of-gray">
+            <div class="card w3-gray w3-card">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
 
     <!-- Start of the Main Body Content -->
     <div class="main-body">
-      <div class="sidebar w3-left w3-dark-gray">
+      <div class="row">
+        <div class="left sidebar my-kind-of-gray">
           <ul class="w3-btn teal w-100per" onclick="dropPlayers('Apex')">
             Apex Legends
             <li class="w3-btn w3-card maroon w-100per">John Doe</li>
@@ -48,18 +61,30 @@
 
           </ul>
           <ul class="w3-btn teal w-100per" onclick="dropPlayers('RocketLeague')">
-             Rocket League
+            Rocket League
 
             <li class=" w3-btn w3-card maroon w-100per">KogtreyFu</li>
 
           </ul>
+
+        </div>
+        <div class="content">
+          <h3>Content Frame</h3>
+          <p>Container to hold the Stat site window for the corresponding player. Will eventually cover majority of the screen on focus</p>
+        </div>
+        <div class="right sidebar my-kind-of-gray">
+          <h3>Right Sidebar</h3>
+          <br>
+          <h5>Ideas:</h5>
+          Sight changer?
+        </div>
 
       </div>
 
     </div>
 
     <!-- Start of  -->
-    <div class="w3-bottom footer my-kind-of-gray">
+    <div class="footer teal">
       <div class="w3-center links">
         <a href="">Home</a>
         <a href="">About</a>
