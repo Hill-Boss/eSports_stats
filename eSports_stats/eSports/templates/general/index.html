@@ -11,7 +11,8 @@
 
     {% load static %}
     <!-- localized stylesheets -->
-    <link rel="stylesheet" href="{% static '/css/master.css' %}"></style>
+    <link rel="stylesheet" href="{% static '/css/master.css' %}">
+    <link rel="stylesheet" href="{% static '/css/HomePage.css' %}">
     <link rel="stylesheet" href="{% static '/css/w3.css' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/imgs/eSports_logo.png' %}">
 
@@ -29,13 +30,13 @@
       </div>
       <div class="Menu">
         <div class="dropdown">
-          <button class="dropbtn w3-btn w3-large" onclick="showDrop()">
+          <button class="dropbtn w3-btn w3-xxlarge" onclick="showDrop()">
             Menu
             <i class="fa fa-bars"></i>
           </button>
           <div  id="myDropdown" class="dropdown-content my-kind-of-gray">
-            <div class="card w3-gray w3-card">
-              <a href="#">Link 1</a>
+            <div class="card w3-gray">
+              <a href="/register">Sign Up</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>

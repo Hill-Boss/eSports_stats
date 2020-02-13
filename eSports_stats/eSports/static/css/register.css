@@ -1,0 +1,49 @@
+body{
+  background-color: #ddd;
+}
+.header{
+  text-align: center;
+
+}
+.content{
+
+}
+.register{
+  margin-left: 20%;
+  margin-right: 20%;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+}
+.register h2{
+  text-align: center;
+}
+.input{
+  width: 50%;
+  margin-left: 25%;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.Button-Continue{
+  border-radius: 5px;
+}
+.Button-Continue:hover, .Button-Continue:active{
+  cursor: pointer;
+  color: #000;
+  background-color: #39e600;
+}
+.Button-Container{
+  padding: 15px 14px;
+  width: 100%;
+  text-align: center;
+}
+.valid{
+  border-color: #39e600;
+}
+
+.invalid{
+  border-color: #ff0000!important;
+
+}

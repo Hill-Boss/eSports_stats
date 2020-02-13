@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^dashboard/$', views.display_dash, name='landingPage'),
     url(r'^viewData/$', views.display_data, name='viewData'),
     url(r'^admin/manageUsers/$', views.display_create, name='ManageUsers'),
+    url(r'^register$', views.display_registerPage, name='registerPage'),
+
 
     # url(r'^ajax/getStats/$', views.ajax_getStats, name='ajax_getStats'),
     url(r'^ajax/getGamePlayer/$', views.ajax_getGamePlayer, name='ajax_getGamePlayer'),

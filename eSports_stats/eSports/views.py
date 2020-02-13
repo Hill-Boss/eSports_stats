@@ -17,6 +17,9 @@ def display_dash(request):
 def display_test(request):
     return render(request, 'test/index.html')
 
+def display_registerPage(request):
+    return render(request, 'general/register.html')
+
 def db_data(request):
     user_list = User.objects.all()
     staff_list = Staff.objects.all()
