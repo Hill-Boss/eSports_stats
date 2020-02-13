@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static '/css/register.css'%}">
+    <link rel="stylesheet" href="{% static '/css/master.css'%}">
+    <link rel="stylesheet" href="{% static '/css/w3.css'%}">
+  </head>
+  <body>
+    <div class="header w3-jumbo w3-card black">
+      <h1>Register</h1>
+    </div>
+
+    <div class="content w3-card">
+      <div class="register w3-card darker-gray">
+        <form class="" action="index.html" method="post">
+          <div id="name-info"class="name-info">
+            <h2>Name Information</h2>
+            <div id="first-name">
+              <input id="FirstNameIn" class="input" type="text" placeholder="First Name..." onblur="validateForm('FirstNameIn')">
+            </div>
+            <div id="last-name">
+              <input id="LastNameIn" class="input" type="text" placeholder="Last Name..." onblur="validateForm('LastNameIn')">
+            </div>
+          </div>
+          <div id="email-info"class="email-info">
+            <h2>Email</h2>
+            <input id="EmailIn"class="input" type="text" placeholder="Email..." onblur="validateForm('EmailIn')">
+          </div>
+          <div id="password-info"class="">
+            <h2>Password</h2>
+            <div id="password">
+              <input id="PasswordIn"class="input" type="password" placeholder="Password..." onblur="validateForm('PasswordIn')">
+            </div>
+            <div id="confirm-password">
+              <input id="ConfirmPasswordIn"class="input" type="password" placeholder="Confirm Password..." onblur="validateForm('ConfirmPasswordIn')">
+            </div>
+          </div>
+
+        </form>
+
+        <div class="Button-Container">
+          <button class="Button-Continue w3-xlarge" type="button" name="Continue" onclick="validatePage()">
+            Continue
+            <i class="fa fa-angle-right"></i>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static '/js/signInValidation.js'%}" charset="utf-8"></script>
+  </body>
+</html>
