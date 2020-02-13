@@ -1,16 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import User as user_account
 
 # TODO: Change Char Lengths
 class User(models.Model):
-    user_id = models.AutoField(unique=True, primary_key=True)
-    login_name = models.CharField(max_length=60)
-    first_name = models.CharField(max_length=60)
-    last_name = models.CharField(max_length=60)
-    email = models.EmailField(max_length=60)
+    # login_name = models.CharField(max_length=60)
+    # first_name = models.CharField(max_length=60)
+    # last_name = models.CharField(max_length=60)
+    # email = models.EmailField(max_length=60)
+    user_id = models.OneToOneField(user_account, primary_key=True, on_delete=models.CASCADE)
     discord = models.CharField(max_length=60, default=None, blank=True, null=True)
 
     def __str__(self):
-        return self.login_name
+        return self.user_id.username
 
 
 class Role(models.Model):
@@ -29,7 +30,7 @@ class Staff(models.Model):
     date_end = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):
-        return self.user_id.login_name
+        return self.user_id.user_id.username
 
 
 class Status(models.Model):
@@ -61,7 +62,7 @@ class Player(models.Model):
     date_end = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):
-        return self.user_id.first_name
+        return self.user_id.user_id.username
 
 
 class Game(models.Model):
@@ -106,7 +107,7 @@ class user_team(models.Model):
     date_end = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):
-        return (self.team_id.team_name + ", " + self.user_id.user_id.first_name)
+        return (self.team_id.team_name + ", " + self.user_id.user_id.user_id.username)
 
 
 class Stats(models.Model):
@@ -128,4 +129,4 @@ class user_game(models.Model):
     username = models.CharField(max_length=60)
 
     def __str__(self):
-        return (self.game_id.name + ", " + self.user_id.user_id.first_name)
+        return (self.game_id.name + ", " + self.user_id.user_id.user_id.username)
