@@ -1,12 +1,36 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User, Permission
+from django.contrib.contenttypes.models import ContentType
+from django.core.serializers import serialize
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from .models import User, Role, Staff, Status, Player, Game, Team_Rank, Team, user_team, Stats, user_game
+
+from .models import User as esp_user
+from .models import Role, Staff, Status, Player, Game, Team_Rank, Team, user_team, Stats, user_game
 
 # Create your views here.
+
+# This is to display a message to the user
+active_messages = {'viewData': '', 'index': '', 'register': '' }
+
+def redirect_home(request):
+    return redirect('/home/')
+
 def display_home(request):
+    if active_messages['index'] != '':
+        messages.info(request, active_messages['index'])
+        active_messages['index'] = ''
     return render(request, 'general/index.html')
+
+def display_register(request):
+    if active_messages['register'] != '':
+        messages.info(request, active_messages['register'])
+        active_messages['register'] = ''
+    return render(request, 'general/register.html')
+
 
 def display_create(request):
     return render(request, 'admin/manageUsers.html')
@@ -16,9 +40,6 @@ def display_dash(request):
 
 def display_test(request):
     return render(request, 'test/index.html')
-
-def display_registerPage(request):
-    return render(request, 'general/register.html')
 
 def db_data(request):
     user_list = User.objects.all()
@@ -41,10 +62,16 @@ def db_data(request):
 def display_data(request):
     return render(request, 'accounts/User/viewData.html')
 
+# diplay functions above
+
+# ajax calls below
+
 @csrf_exempt
 def post_data(request):
     if request.method == 'POST':
         pass
+
+
 
 @csrf_exempt
 def ajax_loginUser(request):
@@ -53,30 +80,63 @@ def ajax_loginUser(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return redirect('/home/')
+        active_messages['index'] = 'You have successfully logged in'
+        return redirect_home(request)
     else:
-        return display_home(request)
+        active_messages['index'] = 'Your account was not found or Your password was incorrect'
+        return redirect_home(request)
 
 @csrf_exempt
 def ajax_logoutUser(request):
     logout(request)
+    return redirect_home(request)
+
+@csrf_exempt
+def ajax_registerUser(request):
+    # try authenticating the user
+    user = authenticate(request=None, username=request.POST['email'], password=request.POST['password'])
+
+    # if None then user DNE
+    try:
+        if user is None:
+            first = request.POST['firstname']
+            last = request.POST['lastname']
+            email = request.POST['email']
+            password = request.POST['password']
+            discord = request.POST['discord']
+            print(first, ' ', last, ' ', email, ' ', password, ' ', discord)
+            # create django user
+            user_acc = User.objects.create_user(email, email, password, first_name=first, last_name=last)
+            user_acc.save()
+
+            user = authenticate(request, username=email, password=password)
+            # create esp user
+            u = esp_user(user_id=user_acc, discord=discord)
+            u.save()
+            print(u.user_id)
+
+            # login new user
+            if user is not None:
+                login(request, user)
+                active_messages['index'] = 'You have successfully logged in'
+                return redirect('/home/')
+            else:
+                active_messages['register'] = 'Your account was not created for some reason'
+                return redirect('/register/')
+        else:
+            active_messages['register'] = 'That email is already used.'
+            return redirect('/register/')
+    except Exception as e:
+        if str(e) == 'UNIQUE constraint failed: auth_user.username':
+            active_messages['register'] = 'That username is already used.'
+        else:
+            active_messages['register'] = e
+        return redirect('/register/')
 
 @csrf_exempt
 def ajax_getGamePlayer(request):
     if request.method == 'GET':
         return JsonResponse(User_Game(), safe=False)
-
-
-@csrf_exempt
-def ajax_createUser(request):
-    if request.method == 'POST':
-        newUser = User(login_name=request.POST[username],
-                first_name=request.POST[first_name],
-                last_name=request.POST[last_name],
-                email=request.POST[email],
-                discord=request.POST[discord])
-        newUser.save()
-        # return HttpResponse(U, safe=False)
 
 
 def User_Game():
