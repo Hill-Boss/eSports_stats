@@ -3,10 +3,6 @@ from django.contrib.auth.models import User as user_account
 
 # TODO: Change Char Lengths
 class User(models.Model):
-    # login_name = models.CharField(max_length=60)
-    # first_name = models.CharField(max_length=60)
-    # last_name = models.CharField(max_length=60)
-    # email = models.EmailField(max_length=60)
     user_id = models.OneToOneField(user_account, primary_key=True, on_delete=models.CASCADE)
     discord = models.CharField(max_length=60, default=None, blank=True, null=True)
 
@@ -15,7 +11,7 @@ class User(models.Model):
 
 
 class Role(models.Model):
-    role_id = models.IntegerField(primary_key=True)
+    role_id = models.AutoField(primary_key=True)
     role_name = models.CharField(max_length=60)
 
     def __str__(self):
@@ -34,7 +30,7 @@ class Staff(models.Model):
 
 
 class Status(models.Model):
-    status_id = models.IntegerField(primary_key=True)
+    status_id = models.AutoField(primary_key=True)
     status = models.CharField(max_length=60)
     date_start = models.DateField()
     date_end = models.DateField(default=None, blank=True, null=True)
@@ -46,7 +42,7 @@ class Status(models.Model):
 class Player(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     status_id = models.ForeignKey(Status, on_delete=models.CASCADE)
-    student_id = models.IntegerField()
+    student_id = models.PositiveIntegerField()
     gpa = models.PositiveSmallIntegerField()
     YEAR_IN_SCHOOL_CHOICES = [
         ('FR', 'Freshman'),
@@ -68,7 +64,7 @@ class Player(models.Model):
 class Game(models.Model):
     game_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=60)
-    status_id = models.ForeignKey(Status, max_length=60) # TODO: change??
+    status_id = models.ForeignKey(Status, on_delete=models.CASCADE) # TODO: change??
     platform = models.CharField(max_length=60)
     launcher = models.CharField(max_length=60)
 
@@ -88,7 +84,7 @@ class Team(models.Model):
     team_id = models.AutoField(primary_key=True)
     game_id = models.OneToOneField(Game, on_delete=models.CASCADE)
     rank_id = models.OneToOneField(Team_Rank, on_delete=models.CASCADE)
-    status_id = models.ForeignKey(Status, max_length=60)
+    status_id = models.ForeignKey(Status, on_delete=models.CASCADE)
     team_name = models.CharField(max_length=60)
     date_start = models.DateField()
     date_end = models.DateField(default=None, blank=True, null=True)

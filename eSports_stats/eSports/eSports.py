@@ -1,33 +1,24 @@
-from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
-from django.contrib.auth.models import Permission
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User, Permission
 from django.contrib.contenttypes.models import ContentType
+from django.core.serializers import serialize
+from django.http import JsonResponse, HttpResponse
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
-# TODO: This is would allow users to Publish a post for example, might be useful
-# from myapp.models import BlogPost
+from .models import User, Role, Staff, Status, Player, Game, Team_Rank, Team, user_team, Stats, user_game
+
+
+# def {{'Get some data table data'}}():
+#     all_{{'data'}} = {{'data table name'}}.objects.all()
+#     all_{{'data'}} = encoder_JSON(all_{{'data'}})
+#     return all_{{'data'}}
 #
-# def create_Permissions():
-#     content_type = ContentType.objects.get_for_model(BlogPost)
-#     permission = Permission.objects.create(
-#         codename='can_publish',
-#         name='Can Publish Posts',
-#         content_type=content_type,
-#     )
-
-def auth_user(user, password):
-    user = authenticate(username=user, password=password)
-    if user is not None:
-        pass
-        # A backend authenticated the credentials
-    else:
-        pass
-        # No backend authenticated the credentials
-
-def set_password(user, newPass):
-    u = User.objects.get(username=user)
-    u.set_password(newPass)
-    u.save()
-
-def create_user(first, last, email, password):
-    u = User.objects.create_user(first, email, password, last_name=last)
-    u.save()
+# # create uncoder for table
+# def JSON_encoder_{{'table name'}}(data):
+#     response = {}
+#     for key in data:
+#         obj = []
+#         obj.append({{'table.Stuff'}})
+#         response[key.{{'table identifier'}}] = obj
+#     return response
