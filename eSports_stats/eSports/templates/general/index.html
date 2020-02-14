@@ -30,15 +30,19 @@
       </div>
       <div class="Menu">
         <div class="dropdown">
-          <button class="dropbtn w3-btn w3-xxlarge" onclick="showDrop()">
+          <button class="dropbtn drop w3-btn w3-xxlarge" onclick="showDrop()">
             Menu
             <i class="fa fa-bars"></i>
           </button>
           <div  id="myDropdown" class="dropdown-content my-kind-of-gray">
-            <div class="card w3-gray">
+            <div class="card maroon drop">
+              <form autocomplete="off" class="sign-up-form drop" action="index.html" method="post">
+                <h6>Sign In</h6>
+                <input class="drop light-gray" type="text" name="" autocomplete="off" placeholder="Username">
+                <input class="drop light-gray" type="password" name="" autocomplete="off" placeholder="password">
+              </form>
+              <h6>Not registered?</h6>
               <a href="/register/">Sign Up</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
             </div>
           </div>
         </div>
@@ -50,24 +54,18 @@
     <div class="main-body">
       <div class="row">
         <div class="left sidebar my-kind-of-gray">
-          <ul class="w3-btn teal w-100per" onclick="dropPlayers('Apex')">
-            Apex Legends
-            <li class="w3-btn w3-card maroon w-100per">John Doe</li>
-            <li class="w3-btn w3-card maroon w-100per">John Doe</li>
+          <div id="Apex" class="player-button teal w-100per" onclick="dropPlayers('Apex')">
+            <h6>Apex Legends</h6>
 
+          </div>
+          <div id="LeagueOfLegends" class="player-button teal w-100per" onclick="dropPlayers('LeagueOfLegends')">
+            <h6>League of Legends</h6>
 
-          </ul>
-          <ul class="w3-btn teal w-100per" onclick="dropPlayers('LeagueOfLegends')">
-            League of Legends
+          </div>
+          <div id="RocketLeague" class="player-button teal w-100per" onclick="dropPlayers('RocketLeague')">
+          <h6>Rocket League</h6>
 
-          </ul>
-          <ul class="w3-btn teal w-100per" onclick="dropPlayers('RocketLeague')">
-            Rocket League
-
-            <li class=" w3-btn w3-card maroon w-100per">KogtreyFu</li>
-
-          </ul>
-
+        </div>
         </div>
         <div class="content">
           <h3>Content Frame</h3>

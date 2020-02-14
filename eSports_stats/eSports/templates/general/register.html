@@ -17,34 +17,34 @@
     <div class="content w3-card">
       <div class="register w3-card darker-gray">
         <!-- form redirects to -->
-        <form class="" action="/ajax/registerUser/" onsubmit="return validatePage()" method="post">
+        <form class="" autocomplete="off" action="/ajax/registerUser/" onsubmit="return validatePage()" method="post">
           <div id="name-info" class="name-info">
             <h2>Name Information</h2>
             <div id="first-name">
-              <input id="FirstNameIn" class="input" type="text" name="firstname" value='' placeholder="First Name..." onblur="validateForm('FirstNameIn')">
+              <input id="FirstNameIn" class="input" type="text" name="firstname" value='' placeholder="First Name..." autocomplete="off" onblur="validateForm('FirstNameIn')">
             </div>
             <div id="last-name">
-              <input id="LastNameIn" class="input" type="text" name="lastname" value='' placeholder="Last Name..." onblur="validateForm('LastNameIn')">
+              <input id="LastNameIn" class="input" type="text" name="lastname" value='' placeholder="Last Name..." autocomplete="off" onblur="validateForm('LastNameIn')">
             </div>
           </div>
           <!-- Cody added this -->
           <div id="discord-info" class="discord-info">
             <h2>Discord Name (optional)</h2>
             <div id="discord-name">
-              <input id="discordIn" class="input" type="text" name="discord" value='' placeholder="discordName#1234" onblur="validateForm('discordIn')">
+              <input id="discordIn" class="input" type="text" name="discord" value='' placeholder="discordName#1234" autocomplete="off" onblur="validateForm('discordIn')">
             </div>
           </div>
           <div id="email-info"class="email-info">
             <h2>Email</h2>
-            <input id="EmailIn"class="input" type="text" name="email" value='' placeholder="Email..." onblur="validateForm('EmailIn')">
+            <input id="EmailIn"class="input" type="text" name="email" value='' placeholder="Email..." autocomplete="off" onblur="validateForm('EmailIn')">
           </div>
           <div id="password-info"class="">
             <h2>Password</h2>
             <div id="password">
-              <input id="PasswordIn"class="input" type="password" name="password" value='' placeholder="Password..." onblur="validateForm('PasswordIn')">
+              <input id="PasswordIn"class="input" type="password" name="password" value='' placeholder="Password..." autocomplete="off" onblur="validateForm('PasswordIn')">
             </div>
             <div id="confirm-password">
-              <input id="ConfirmPasswordIn"class="input" type="password" value='' placeholder="Confirm Password..." onblur="validateForm('ConfirmPasswordIn')">
+              <input id="ConfirmPasswordIn"class="input" type="password" value='' placeholder="Confirm Password..." autocomplete="off" onblur="validateForm('ConfirmPasswordIn')">
             </div>
           </div>
 
