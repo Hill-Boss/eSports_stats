@@ -47,7 +47,24 @@ a:hover, a:active {
   display: block-inline;
   height: inherit;
 }
+.account-buttons{
+  text-align: right;
+  padding: 10px;
 
+}
+.account-button a{
+  border-radius: 15px;
+  display: inline-block;
+}
+.a-button{
+  padding: 14px 25px;
+  border-radius: 15px;
+  display: inline-block;
+}
+.a-button:hover, .a-button:active{
+  cursor: pointer;
+  background-color: gray;
+}
 .dropdown{
   overflow: hidden;
   float: right;
