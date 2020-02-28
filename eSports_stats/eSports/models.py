@@ -108,7 +108,8 @@ class user_team(models.Model):
 
 class Stats(models.Model):
     stat_id = models.AutoField(primary_key=True)
-    stats = models.TextField() # TODO: JSON OR SOMETHING
+    description = models.TextField()
+    stats = models.TextField(default=None, blank=True, null=True) # TODO: JSON OR SOMETHING
     date_updated = models.DateTimeField(auto_now=True)
 
 # TODO: str return???
@@ -117,11 +118,11 @@ class Stats(models.Model):
 
 
 class user_game(models.Model):
-    user_id = models.ForeignKey(Player, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(Player, on_delete=models.CASCADE, default=None, blank=True, null=True)
     game_id = models.ForeignKey(Game, on_delete=models.CASCADE)
     class Meta:
         unique_together = ('user_id', 'game_id')
-    stat_id = models.ForeignKey(Stats, on_delete=models.CASCADE, default=None, blank=True, null=True)
+    stat_id = models.OneToOneField(Stats, on_delete=models.CASCADE,  default=None, blank=True, null=True)
     username = models.CharField(max_length=60)
 
     def __str__(self):

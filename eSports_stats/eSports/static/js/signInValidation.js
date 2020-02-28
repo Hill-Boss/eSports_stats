@@ -1,6 +1,6 @@
 function validateForm(id) {
   var input;
-  var letters = /^[A-Za-z]+$/;
+  var letters = /^[a-zA-Z]+$/;
   var email = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
   var discord = /^([a-zA-Z0-9_\-\.]+)#([0-9]{4})$/;
   var PassRegex = /^[a-zA-Z]\w{3,14}$/;

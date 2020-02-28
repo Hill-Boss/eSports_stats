@@ -34,17 +34,6 @@ a:hover, a:active {
   background-color: #5e001d;
 }
 
-.w3-btn{
-  padding: 0;
-  padding-left: 0!important;
-  padding-right: 0!important;
-  padding-bottom: 0!important;
-  display: block!important;
-}
-ul.w3-btn{
-  padding-top: 5px!important;
-}
-
 /* Top of page >>> Bottom of Page */
 .header{
   text-align: center;
@@ -53,20 +42,12 @@ ul.w3-btn{
   overflow: hidden;
 }
 
-.logo{
-  width: 50%;
-  float: left;
-}
 .title{
   color: white;
   display: block-inline;
   height: inherit;
 }
-.Menu{
-  float: left;
-  padding: 10px;;
-  width: 50%;
-}
+
 .dropdown{
   overflow: hidden;
   float: right;
@@ -75,7 +56,7 @@ ul.w3-btn{
 .dropdown button{
   padding: 15px 14px;
 }
-.dropbtn.w3-btn{
+.dropbtn {
   padding: 0!important;
 }
 
