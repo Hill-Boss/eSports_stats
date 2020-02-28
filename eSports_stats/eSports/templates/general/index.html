@@ -29,26 +29,30 @@
     </div>
     <div class="w3-half">
       <h1>University of Montana Esports</h1>
-    </div>
-    <div class="w3-quater">
+      <div class="account-buttons">
         <div class="dropdown">
-          <button class="dropbtn drop w3-btn w3-xxlarge" onclick="showDrop()">
-            Menu
-            <i class="fa fa-bars"></i>
-          </button>
-          <div id="myDropdown" class="dropdown-content my-kind-of-gray">
+          <div class="a-button drop" onclick="showDrop()">Log In</div>
+          <div  id="myDropdown" class="dropdown-content drop my-kind-of-gray">
             <div class="card maroon drop">
               <form autocomplete="off" class="sign-up-form drop" action="index.html" method="post">
-                <h6>Sign In</h6>
+                <h6 class="">Sign In</h6>
                 <input class="drop light-gray" type="text" name="" autocomplete="off" placeholder="Username">
                 <input class="drop light-gray" type="password" name="" autocomplete="off" placeholder="password">
               </form>
-              <h6>Not registered?</h6>
-              <a href="/register/">Sign Up</a>
+              <a href="#">Log In</a>
             </div>
           </div>
         </div>
+        <span>or</span>
+        <a href="/register/">Sign Up</a>
 
+      </div>
+    </div>
+    <div class="navbar teal">
+      <div class="logo">
+        <img src="{% static '/imgs/eSports_logo.png'%}" alt="Griz Esports Logo">
+      </div>
+      <div class="Menu">
       </div>
 
     <span>
@@ -63,8 +67,19 @@
     <!-- Start of the Main Body Content -->
     <div class="main-body">
       <div class="row">
-        <div id="games-players" class="left sidebar my-kind-of-gray">
-          <!-- will contain games and players -->
+        <div class="left sidebar my-kind-of-gray">
+          <div id="Apex" class="player-button teal w-100per" onclick="dropPlayers('Apex')">
+            <h6>Apex Legends</h6>
+
+          </div>
+          <div id="LeagueOfLegends" class="player-button teal w-100per" onclick="dropPlayers('LeagueOfLegends')">
+            <h6>League of Legends</h6>
+
+          </div>
+          <div id="RocketLeague" class="player-button teal w-100per" onclick="dropPlayers('RocketLeague')">
+          <h6>Rocket League</h6>
+
+        </div>
         </div>
         <div class="content">
           <h3>Content Frame</h3>

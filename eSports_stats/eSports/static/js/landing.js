@@ -48,3 +48,18 @@ window.onclick = function(event) {
 //     div.appendChild(button);
 //   }
 // }
+
+function dropPlayers(Game){
+
+  var div = document.getElementById(Game);
+
+  for (var i = 0; i < Players[Game].length; i++) {
+    Player = Players[Game][i];
+    var button = document.createElement("Button");
+    button.style.width = '100%';
+    button.classList.add("player-button");
+    var playerName = document.createTextNode(Player);
+    button.appendChild(playerName);
+    div.appendChild(button);
+  }
+}
