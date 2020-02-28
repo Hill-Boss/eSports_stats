@@ -29,35 +29,27 @@
     </div>
     <div class="w3-half">
       <h1>University of Montana Esports</h1>
-      <div class="account-buttons">
-        <div class="dropdown">
-          <div class="a-button drop" onclick="showDrop()">Log In</div>
-          <div  id="myDropdown" class="dropdown-content drop my-kind-of-gray">
-            <div class="card maroon drop">
-              <form autocomplete="off" class="sign-up-form drop" action="index.html" method="post">
-                <h6 class="">Sign In</h6>
-                <input class="drop light-gray" type="text" name="" autocomplete="off" placeholder="Username">
-                <input class="drop light-gray" type="password" name="" autocomplete="off" placeholder="password">
-              </form>
-              <a href="#">Log In</a>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class=" w3-quarter account-buttons">
+      <div class="">
+        <div class="a-button drop" style="display:inline-block;" onclick="showDrop()">Log In</div>
         <span>or</span>
         <a href="/register/">Sign Up</a>
 
       </div>
+      <div id="myDropdown" class="dropdown-content drop my-kind-of-gray">
+          <div class="card maroon drop">
+            <form autocomplete="off" class="sign-up-form drop" action="index.html" method="post">
+              <h6 class="">Sign In</h6>
+              <input class="drop light-gray" type="text" name="" autocomplete="off" placeholder="Username">
+              <input class="drop light-gray" type="password" name="" autocomplete="off" placeholder="password">
+            </form>
+            <a href="#">Log In</a>
+          </div>
+        </div>
     </div>
-    <div class="navbar teal">
-      <div class="logo">
-        <img src="{% static '/imgs/eSports_logo.png'%}" alt="Griz Esports Logo">
-      </div>
-      <div class="Menu">
-      </div>
-
-    <span>
-    </span>
     <!-- <div class="w3-right w3-top w3-btn w3-medium fa fa-bars"></div> -->
+  </div>
   </div>
   <div id="our-page">
     <div class="navbar teal">
@@ -77,9 +69,9 @@
 
           </div>
           <div id="RocketLeague" class="player-button teal w-100per" onclick="dropPlayers('RocketLeague')">
-          <h6>Rocket League</h6>
+            <h6>Rocket League</h6>
 
-        </div>
+          </div>
         </div>
         <div class="content">
           <h3>Content Frame</h3>
