@@ -126,4 +126,4 @@ class user_game(models.Model):
     username = models.CharField(max_length=60)
 
     def __str__(self):
-        return (self.game_id.name + ", " + self.user_id.user_id.user_id.username)
+        return (self.game_id.name + ", " + self.username)

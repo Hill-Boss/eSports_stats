@@ -14,6 +14,6 @@ function getURL(game, username) {
     url = "https://lol.mobalytics.gg/summoner/na/" + username + "/?season=13";
   }
   outsidePage.data = url;
-  document.getElementById('our-page').classList.toggle('hide');
-  outsidePage.classList.toggle('hide');
+  // document.getElementById('our-page').classList.toggle('hide');
+  // outsidePage.classList.toggle('hide');
 }

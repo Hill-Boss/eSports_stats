@@ -56,7 +56,11 @@
     <!-- Start of the Main Body Content -->
     <div class="main-body">
       <div class="row">
-        <div class="left sidebar my-kind-of-gray">
+        <div id='games-players' class="left sidebar my-kind-of-gray">
+          <!-- ajax will populate this div -->
+        </div>
+        <!--  -->
+        <!-- <div class="left sidebar my-kind-of-gray">
           <div id="Apex" class="player-button teal w-100per" onclick="dropPlayers('Apex')">
             <h6>Apex Legends</h6>
 
@@ -69,10 +73,11 @@
             <h6>Rocket League</h6>
 
           </div>
-        </div>
+        </div> -->
         <div class="content">
-          <h3>Content Frame</h3>
-          <p>Container to hold the Stat site window for the corresponding player. Will eventually cover majority of the screen on focus</p>
+          <object id="outsidePage" class="" style="width:100%; height:100%;" type="text/html"></object>
+          <!-- <h3>Content Frame</h3>
+          <p>Container to hold the Stat site window for the corresponding player. Will eventually cover majority of the screen on focus</p> -->
         </div>
         <div class="right sidebar my-kind-of-gray">
           <h3>Right Sidebar</h3>
@@ -96,7 +101,8 @@
     </div>
   </div>
   <div class="">
-    <object id="outsidePage" class="hide w3-bottom" style="width:100vw; height:89vh;" type="text/html"></object>
+    <!-- <object id="outsidePage" class="hide w3-bottom" style="width:100vw; height:89vh;" type="text/html"></object> -->
+
 
   </div>
 
